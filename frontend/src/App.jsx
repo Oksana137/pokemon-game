@@ -2,12 +2,15 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  createRoutesElements,
+  createRoutesFromElements,
 } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
+import Cards from "./components/Cards";
+import Detail from "./pages/Detail";
 
 function App() {
   const router = createBrowserRouter(
-    createRoutesElements(
+    createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Cards />} />
         <Route path="/:id" element={<Detail />} />
