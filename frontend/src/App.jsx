@@ -1,24 +1,17 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  createRoutesFromElements,
-} from "react-router-dom";
-import MainLayout from "./layouts/MainLayout";
-import Cards from "./components/Cards";
-import Detail from "./pages/Detail";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+
+import LeaderBord from "./pages/LeaderBord";
+import Home from "./pages/Home";
 
 function App() {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<Cards />} />
-        <Route path="/:id" element={<Detail />} />
-      </Route>
-    )
+  return( 
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/leaderbord" element={<LeaderBord />} />
+    </Routes>
+  </BrowserRouter>
   );
-
-  return <RouterProvider router={router} />;
 }
 
 export default App;
