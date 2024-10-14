@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import './db/connection.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import leaderboardRouter from './routers/leaderboardRouter.js';
 
