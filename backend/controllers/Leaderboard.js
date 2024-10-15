@@ -27,23 +27,26 @@ export const getLeaderboardById = async (req, res, next) => {
     }
   };
 
+
 export const addNewLeaderboard = async (req, res, next) => {
     const { username, score, date } = req.body;
-  
+
+    const formattedDate = new Date(date); // Datum in ein Date-Objekt konvertieren
+
     try {
-      const newLeaderboard = await Leaderboard.create({
-        username,
-        score,
-        date,
-      });
-      res.status(201).json(newLeaderboard);
-      // const newLeaderboard = new Leaderboard({ username, score, date });
-      // const savedLeaderboard = await newLeaderboard.save();
-      // res.status(201).json(savedLeaderboard);
+        const newLeaderboard = await Leaderboard.create({
+            username,
+            score,
+            date: formattedDate, // Speichern als Date-Objekt
+        });
+        res.status(201).json(newLeaderboard);
     } catch (error) {
-      next(error);
+        next(error);
     }
-  };
+};
+
+export default Leaderboard;
+
 
 
   export const updateLeaderboard = async (req, res, next) => {
