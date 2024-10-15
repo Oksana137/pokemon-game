@@ -14,4 +14,9 @@ leaderboardRouter
       .put(leaderboardController.updateLeaderboard)
       .delete(leaderboardController.deleteLeaderboard);
 
+    leaderboardRouter
+      .route('/name/:name')  
+      .get(leaderboardController.getLeaderboardByName);
+     
+
 export default leaderboardRouter;
