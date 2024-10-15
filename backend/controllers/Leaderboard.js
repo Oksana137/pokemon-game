@@ -1,5 +1,5 @@
 import Leaderboard from "../models/leaderboardSchema.js";
-// import ErrorResponse from "../utils/ErrorResponse.js";
+import ErrorResponse from "../utils/ErrorResponse.js";
 
 export const getAllLeaderboard = async(req, res, next) => {
     try {

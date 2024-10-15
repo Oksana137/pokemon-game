@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Router } from 'express';
 import * as leaderboardController from '../controllers/Leaderboard.js';
 
 const leaderboardRouter = Router();
