@@ -1,6 +1,6 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
-import LeaderBord from "./pages/LeaderBord";
+import Leaderboard from "./pages/LeaderBord";
 import Home from "./pages/Home";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/leaderbord" element={<LeaderBord />} />
+      <Route path="/leaderbord" element={<Leaderboard />} />
     </Routes>
   </BrowserRouter>
   );
