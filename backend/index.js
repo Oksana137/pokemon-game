@@ -6,11 +6,14 @@ import leaderboardRouter from './routers/leaderboardRouter.js';
 
 
 const app = express();
-const PORT = 8000;
+const PORT = 8201;
 
 // App
 app.use(express.json());
 app.use(cors());
+
+// Test
+// app.get('/', (req, res) => { res.send('Hello World 8201'); });
 
 // Routes
 app.use('/leaderboard', leaderboardRouter);
