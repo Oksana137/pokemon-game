@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const leaderboardSchema = new mongoose.Schema({
+  // _id ist automatisch
   username: {
       type: String,
       required: [true, 'Username is required'],

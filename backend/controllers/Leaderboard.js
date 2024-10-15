@@ -51,12 +51,12 @@ export default Leaderboard;
 
   export const updateLeaderboard = async (req, res, next) => {
     const { id } = req.params;
-    const { name, author, imageUrl } = req.body;
+    const { username, score, date } = req.body;
   
     try {
       const updatedLeaderboard = await Leaderboard.findByIdAndUpdate(
         id,
-        { name, author, imageUrl },
+        { username, score, date },
         { new: true } //this ensures the updated document is returned!
       );
   
