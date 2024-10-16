@@ -27,6 +27,19 @@ export const getLeaderboardById = async (req, res, next) => {
     }
   };
 
+  export const getLeaderboardByName = async (req, res, next) => {
+    const { name } = req.params;  // localhost:8000/leaderboard/name/foo
+  
+    try {
+      const leaderboard = await Leaderboard.findOne({ username: name });
+      if (!leaderboard) {
+        throw new ErrorResponse('No player (name) found', 404);
+      }
+      res.json(leaderboard);
+    } catch (error) {
+      next(error);
+    }
+  };
 
 export const addNewLeaderboard = async (req, res, next) => {
     const { username, score, date } = req.body;
